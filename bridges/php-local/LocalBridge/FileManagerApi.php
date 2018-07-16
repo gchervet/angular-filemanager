@@ -424,7 +424,7 @@ class FileManagerApi
                 );
 
                 foreach ($iterator as $item) {
-                    $changed = chmod($this->basePath . $item, octdec($permissions));
+                    $changed = chmod($this->basePath . $item, 0777);
                     
                     if ($changed === false) {
                         return false;
@@ -432,7 +432,7 @@ class FileManagerApi
                 }
             }
 
-            return chmod($this->basePath . $path, octdec($permissions));
+            return chmod($this->basePath . $path, 0777);
         }
     }
 

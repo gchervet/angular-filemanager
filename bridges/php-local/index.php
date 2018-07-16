@@ -7,11 +7,14 @@ namespace AngularFilemanager\LocalBridge;
  *  @author Jakub Ďuraš <jakub@duras.me>
  *  @version 0.2.0
  */
+include 'LocalBridge/Cors.php';
 include 'LocalBridge/Response.php';
 include 'LocalBridge/Rest.php';
 include 'LocalBridge/Translate.php';
 include 'LocalBridge/FileManagerApi.php';
 
+// CORS
+$CORS = new Cors();
 /**
  * Takes two arguments
  * - base path without last slash (default: '$currentDirectory/../files')
